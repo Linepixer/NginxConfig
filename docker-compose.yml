@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx:latest
+    restart: on-failure
+    network_mode: "host"
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
